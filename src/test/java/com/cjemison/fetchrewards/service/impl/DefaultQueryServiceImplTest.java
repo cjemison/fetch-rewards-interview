@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 
 import com.cjemison.fetchrewards.domain.RequestDO;
 import com.cjemison.fetchrewards.domain.ResponseDO;
+import io.micrometer.core.instrument.composite.CompositeMeterRegistry;
 import java.util.Random;
 import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +22,7 @@ public class DefaultQueryServiceImplTest {
 
   @Before
   public void setup() {
-    defaultQueryService = new DefaultQueryServiceImpl();
+    defaultQueryService = new DefaultQueryServiceImpl(new CompositeMeterRegistry());
   }
 
   @Test
