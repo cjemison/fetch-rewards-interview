@@ -1,0 +1,8 @@
+version: "3.5"
+
+services:
+  query:
+    image: query:latest
+    ports:
+      - 8280:8080
+      - 8281:8081
