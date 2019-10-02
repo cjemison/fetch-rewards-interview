@@ -18,6 +18,7 @@ $ make docker
 # you can add this value to /etc/hosts  ex. 192.168.99.117 localdev
 
 # Open Api can test the code from a browser (Swagger): http://localdev:8280/swagger-ui.html
+# Metrics: http://localdev:9280/#/wallboard
 
 # To stop the container: docker-compose stop
 ```

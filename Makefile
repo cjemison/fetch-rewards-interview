@@ -9,4 +9,4 @@ javaBuild:
 docker:
 	./gradlew clean build
 	docker build . -t query:latest
-	docker-compose up -d query
+	docker-compose up --build -d
