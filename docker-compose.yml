@@ -1,8 +1,14 @@
 version: "3.5"
 
 services:
+  spring-admin:
+    build: ./spring-admin/
+    ports:
+      - 9280:8080
   query:
-    image: query:latest
+    build: ./
+    depends_on:
+      - spring-admin
     ports:
       - 8280:8080
       - 8281:8081
