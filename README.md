@@ -8,6 +8,7 @@ $ make javaBuild
 ## Deploy to Docker Machine 
 ```bash
 # Enable Docker Machine
+$ brew install docker docker-compose docker-machine docker-machine-nfs
 $ docker-machine create default --virtualbox-memory=4096 --virtualbox-no-share
 $ docker-machine start default
 $ eval $(docker-machine env default) # switch to docker context

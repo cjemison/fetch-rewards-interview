@@ -1,6 +1,15 @@
 version: "3.5"
 
 services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - /prometheus:/tmp/prometheus/
+    command:
+      - '--config.file=/tmp/prometheus/prometheus.yml'
+    ports:
+      - 9380:9090
+    restart: unless-stopped
   spring-admin:
     build: ./spring-admin/
     ports:
@@ -9,6 +18,7 @@ services:
     build: ./
     depends_on:
       - spring-admin
+      - prometheus
     ports:
       - 8280:8080
       - 8281:8081
